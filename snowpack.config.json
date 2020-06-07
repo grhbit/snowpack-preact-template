@@ -1,5 +1,8 @@
 {
   "extends": "@snowpack/app-scripts-preact",
-  "scripts": {},
+  "scripts": {
+    "run:lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'",
+    "run:lint::watch": "watch \"$1\" src"
+  },
   "plugins": []
 }
