@@ -57,8 +57,8 @@ rules:
         - sibling
         - index
         - unknown
-  import/no-duplicates: off
-  no-duplicate-imports: error
+  import/no-duplicates: error
+  no-duplicate-imports: off
   no-useless-constructor: off
   prefer-const:
     - error

@@ -1,20 +1,16 @@
 import { h } from "preact";
+import type { FunctionComponent } from "preact";
 import styled, { keyframes } from "styled-components/macro";
+import tw from "twin.macro";
 import logo from "./logo.png";
 
-const AppContainer = styled.div`
-  text-align: center;
-`;
+const AppContainer = tw.div`text-center`;
 
 const AppHeader = styled.header`
+  ${tw`flex flex-col items-center justify-center min-h-screen text-white`}
+
   background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
 `;
 
 const AppLink = styled.a`
@@ -31,16 +27,16 @@ const AppLogoSpin = keyframes`
 `;
 
 const AppLogo = styled.img`
+  ${tw`pointer-events-none mb-4`}
+
   height: 40vmin;
-  pointer-events: none;
-  margin-bottom: 1rem;
   animation: ${AppLogoSpin} infinite 1.6s ease-in-out alternate;
 `;
 
-function App() {
+const App: FunctionComponent = () => {
   return (
     <AppContainer>
-      <AppHeader>
+      <AppHeader tw="flex flex-col items-center justify-center min-h-screen text-white">
         <AppLogo src={logo} alt="logo" />
         <p>
           Edit <code>src/App.jsx</code> and save to reload.
@@ -51,6 +47,6 @@ function App() {
       </AppHeader>
     </AppContainer>
   );
-}
+};
 
 export default App;

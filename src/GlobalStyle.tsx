@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components/macro";
+import "tailwindcss/dist/base.min.css";
 
 const GlobalStyle = createGlobalStyle`
   body {
