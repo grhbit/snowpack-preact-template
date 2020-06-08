@@ -13,5 +13,5 @@
       "react-dom": "preact/compat"
     }
   },
-  "plugins": []
+  "plugins": ["@snowpack/plugin-webpack"]
 }
