@@ -1,10 +1,16 @@
-import { h, render } from "preact";
+import { h, render, Fragment } from "preact";
 import "preact/devtools";
 import App from "./App";
-import "./index.css";
+import GlobalStyle from "./GlobalStyle";
 
 const root = document.getElementById("root");
 
 if (root !== null) {
-  render(<App />, root);
+  render(
+    <Fragment>
+      <GlobalStyle />
+      <App />
+    </Fragment>,
+    root
+  );
 }

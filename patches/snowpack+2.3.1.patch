@@ -1,0 +1,26 @@
+diff --git a/node_modules/snowpack/dist-node/index.js b/node_modules/snowpack/dist-node/index.js
+index e9a4de3..e17e88d 100644
+--- a/node_modules/snowpack/dist-node/index.js
++++ b/node_modules/snowpack/dist-node/index.js
+@@ -1375,7 +1375,7 @@ function parseCodeForInstallTargets(fileLoc, code) {
+   }
+ 
+   const allImports = imports.map(imp => parseImportStatement(code, imp)).filter(isTruthy) // Babel macros are not install targets!
+-  .filter(imp => !imp.specifier.endsWith('.macro'));
++  .filter(imp => !/[./]macro(\.js)?$/.test(imp.specifier));
+   return allImports;
+ }
+ 
+diff --git a/node_modules/snowpack/dist-src/scan-imports.js b/node_modules/snowpack/dist-src/scan-imports.js
+index 07d1522..a321dde 100644
+--- a/node_modules/snowpack/dist-src/scan-imports.js
++++ b/node_modules/snowpack/dist-src/scan-imports.js
+@@ -146,7 +146,7 @@ function parseCodeForInstallTargets(fileLoc, code) {
+         .map((imp) => parseImportStatement(code, imp))
+         .filter(isTruthy)
+         // Babel macros are not install targets!
+-        .filter((imp) => !imp.specifier.endsWith('.macro'));
++        .filter((imp) => !/[./]macro(\.js)?$/.test(imp.specifier));
+     return allImports;
+ }
+ export function scanDepList(depList, cwd) {
