@@ -11,6 +11,6 @@ if (root !== null) {
       <GlobalStyle />
       <App />
     </Fragment>,
-    root
+    root,
   );
 }

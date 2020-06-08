@@ -45,11 +45,7 @@ function App() {
         <p>
           Edit <code>src/App.jsx</code> and save to reload.
         </p>
-        <AppLink
-          href="https://preactjs.com"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <AppLink href="https://preactjs.com" target="_blank" rel="noopener noreferrer">
           Learn Preact
         </AppLink>
       </AppHeader>
