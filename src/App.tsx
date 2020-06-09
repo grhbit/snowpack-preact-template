@@ -36,7 +36,7 @@ const AppLogo = styled.img`
 const App: FunctionComponent = () => {
   return (
     <AppContainer>
-      <AppHeader tw="flex flex-col items-center justify-center min-h-screen text-white">
+      <AppHeader>
         <AppLogo src={logo} alt="logo" />
         <p>
           Edit <code>src/App.jsx</code> and save to reload.
